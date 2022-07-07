@@ -1,0 +1,54 @@
+@import'../utilities/variables';
+@import'../utilities/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0rem;
+    padding: 0rem;
+}
+body,html{
+    font-size: 16px;
+    font-family: $primaryFont;
+}
+img {
+    max-width: 100%;
+}
+a,a:hover,a:focus{ 
+    text-decoration: none;
+    outline:0;
+    @include transition(all 0.3s ease-in-out);
+}
+ul{ 
+    list-style: none; 
+}
+button,
+input, 
+button:focus,
+input:focus,
+textarea:focus,
+:focus-visible{ 
+    outline:0px!important;
+}
+button{
+    cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6{ 
+   line-height: 1.4;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: .4rem;
+    height: .4rem;
+}
+::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $gradientPrimaryColor;
+    border-radius: 4px ;
+    border-right: 1px solid $gradientPrimaryColor;
+    border-left: 1px solid $gradientPrimaryColor;
+    outline: 0px solid transparent;
+}

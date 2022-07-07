@@ -1,0 +1,91 @@
+.cta-btns {
+    text-align: center;
+    margin-top: -32px;
+    .info-links + .info-links {
+        margin-left: 30px;
+         @include media(lg,max){ 
+            margin-left: 4px;
+         }
+         @include media(md,max){
+            margin-left: 0;
+            margin-top: 10px;
+         }
+    }
+}
+.step-section {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    @include media(lg,max){
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    .col {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        flex-basis: 25%;
+        max-width: 25%;
+        width: 25%;
+        @include media(lg,max){
+            flex-basis: 50%;
+            max-width: 50%;
+            width:50%;
+            &:nth-child(n+3) {
+                margin-top:30px;
+            }
+        }
+        @include media(xsm,max){
+            flex-basis: 100%;
+            max-width: 100%;
+            width:100%;
+            margin-top:20px;
+            text-align:center;
+        }
+    }
+}
+.step-card {
+    cursor: pointer;
+    @include transition(all 0.35s ease-in-out);
+    &:hover {
+        margin-top: -10px;
+    }
+    span {
+        display: block;
+        color: $primaryColor;
+        font-size: 50px;
+        line-height: 1;
+        border-bottom: 4px solid;
+        padding-bottom: 5px;
+        margin-bottom: 8px;
+        max-width: 200px;
+        @include media(xl,max){
+            font-size:40px;
+        }
+        @include media(xsm,max){
+            display:inline-block;
+        }
+    }
+    h3 {
+        text-transform: uppercase;
+        color: $primaryColor;
+        font-weight: 600;
+    }
+    p {
+        font-weight: 400;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+        @include media(xxl,max){
+            font-size:14px;
+        }
+    }
+    .learn-more {
+        color: $primaryColor;
+        font-size: 14px;
+        img {
+            width: 13px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}

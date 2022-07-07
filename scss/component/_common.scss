@@ -1,0 +1,275 @@
+@import'../utilities/variables';
+@import'../utilities/mixins';
+.wrapper {
+    overflow:hidden;
+}
+/*buttons*/
+.primary-btn {
+    font-size: 16px;
+    color: $whiteColor;
+    display: inline-block;
+    padding: 10px 50px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-size: 310% 100%;
+    background-image: linear-gradient(to right, #726afe, #2d3bfe, #2d3bfe, #2d3bfe);
+    &:hover {
+        color: $whiteColor;
+        background-position: 100% 0%;
+    }
+}
+
+.secondary-btn {
+    font-size: 16px;
+    color: $whiteColor;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    background: transparent;
+    border: 2px solid $whiteColor;
+    @include media(xxl,max){
+        font-size: 15px;
+        padding: 6px 20px;
+    }
+    &:hover {
+        color: $primaryColor;
+        background: $whiteColor;
+        border-color: $whiteColor;
+    }
+}
+
+.info-links {
+    background: $primaryColor;
+    border: 1px solid $gradientPrimaryColor;
+    color: $whiteColor;
+    padding: 16px 40px;
+    display: inline-block;
+    min-width: 290px;
+    text-align: center;
+    @include media(xl,max){
+        min-width: 270px;
+    }
+    @include media(lg,max){
+        min-width: 230px;
+        padding: 16px 24px;
+        font-size:14px;
+    }
+    @include media(md,max){
+        min-width:inherit;
+        width:100%;
+    }
+    span {
+        text-transform: uppercase;
+    }
+    &:hover {
+        background: $gradientPrimaryColor;
+        border: 1px solid $gradientPrimaryColor;
+    }
+}
+.learnMore {
+    color: $blackColor;
+    display: inline-block;
+    padding-left: 65px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    span {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        @include rounded(50px);
+        background: $learnMore;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @incude box-shadow(0 0 0 rgba(224,0,36,0.2));
+        transition: linear 0.2s;
+        img {
+            max-width: 40px;
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            @include transform(translateY(-50%));
+            @include transition(all 0.35s ease-in-out);
+        }
+    }
+    &:hover {
+        color: $learnMore;
+        span {
+            @include box-shadow(0 0 0 5px rgba(224,0,36,0.2));
+            img {
+                left: -8px;
+            }
+        }
+    }
+}
+
+/* Container */
+.container-fluid {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container{
+            width: 100%;
+      margin-left: auto;
+     margin-right: auto;
+     padding-left: 15px;
+    padding-right: 15px;
+    @include media(sm,min){
+        max-width: 538px;
+    }
+    @include media(md,min){
+        max-width: 738px;
+    }
+    @include media(lg,min){
+        max-width: 950px;
+    }
+    @include media(xl,min){
+        max-width: 1170px;
+    }
+    @include media(xxl,min){
+        max-width: 1280px;
+    } 
+}
+
+.row{
+    flex-flow: wrap;
+    display: flex;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+}
+/* Flexbox */
+.d-flex{
+  @include flex;
+  @include flex-wrap(wrap);
+}
+
+.align-items-center{
+  @include align-items(center)
+}
+.align-items-end{
+  @include align-items(flex-end)
+}
+
+.justify-content-center{
+  @include justify-content(center);
+}
+
+.justify-content-between{
+  @include justify-content(space-between);
+}
+.justify-content-end {
+    @include justify-content(flex-end);
+}
+
+.col-auto {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+[class*="col-"], .col{
+     padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+/*padding*/
+.px-0 {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+/*margin*/
+.mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*section heading*/
+.section-heading {
+    font-size: 40px;
+    color: $primaryColor;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 5px;
+    margin-bottom: 30px;
+    position: relative;
+     @include media(xl,max){
+        font-size: 34px;
+     }
+     @include media(lg,max){
+        font-size: 30px;
+     }
+     @include media(md,max){
+        font-size: 26px;
+     }
+     @include media(xsm,max){
+        text-align: center;
+     }
+    span {
+        font-weight: 500;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 180px;
+        height: 3px;
+        background: $primaryColor;
+        @include media(md,max){
+            width: 150px;
+            height: 1px;
+        }
+        @include media(xsm,max){
+            margin: 0 auto;
+            right: 0;
+        }
+    }
+}
+
+/*section info*/
+.section-info {
+    font-size: 40px;
+    color: $blackColor;
+    font-weight: 300;
+    margin-bottom: 30px;
+    @include media(xxl,max){
+        font-size:36px;
+    }
+    @include media(xl,max){
+        font-size: 30px;
+    }
+    @include media(lg,max){
+        font-size:24px;
+    }
+    @include media(md,max){
+        font-size: 20px;
+    }
+    @include media(sm,max){
+        font-size: 18px;
+    }
+    @include media(xsm,max){
+        text-align: center;
+    }
+}

@@ -1,0 +1,189 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 9;
+    background: transparent;
+    @include transition(all 0.3s ease-in-out);
+    @include media(xl,max){
+        padding: 10px 0;
+    }
+}
+.fixedHeader {
+    .site-header {
+        padding: 10px 0;
+        background: $primaryColor;
+    }
+}
+.site-logo {
+    display: inline-block;
+    color: $whiteColor;
+    font-size: 34px;
+    @include media(xxl,max){
+        font-size: 28px;
+    }
+    @include media(lg,max){
+        font-size: 30px;
+    }
+    letter-spacing: 2px;
+    line-height: 1;
+    span {
+        font-weight: 300;
+        padding-top: 5px;
+        text-transform: uppercase;
+        margin-top: 3px;
+        font-size: 12px;
+        @include media(xxl,max){
+            font-size: 9px;
+        }
+        display: block;
+        border-top: 1px solid $gradientPrimaryColor;
+    }
+}
+.site-nav {
+    .nav-items {
+        color: $whiteColor;
+        font-weight: 300;
+        padding: 6px 3px;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        @include media(xxl,max){
+            font-size:15px;
+        }
+        &:after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: $whiteColor;
+            @include transition(0.5s transform ease);
+            @include transform(scale3d(0,1,1));
+            transform-origin: 100% 50%;
+        }
+        &:hover:after {
+            transform-origin: 0 50%;
+            @include transform(scale3d(1,1,1));
+        }
+    }
+    .active {
+        .nav-items {
+            border-bottom: 1px solid $whiteColor;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    li + li {
+        margin-left: 45px;
+        @include media(xl,max){
+            margin-left: 25px;
+        }
+    }
+}
+.hamburger-menu {
+    cursor: pointer;
+    width: 32px;
+    margin-left:45px;
+    @include media(xl,max){
+        margin-left:25px;
+    }
+    .menu-bar1, .menu-bar2, .menu-bar3 {
+        @include rounded(4px);
+        width: 32px;
+        height: 3px;
+        background-color: $whiteColor;
+        margin: 7px 0;
+        @include transition( all 0.3s ease-in-out);
+        @include media(lg,max){
+            height:2px;
+            margin: 8px 0;
+        }
+    }
+    .menu-bar2 {
+        width: 26px;
+        margin-left: auto;
+    }
+}
+
+/*side menu css*/
+.side-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    @include media(xl,max){
+        width: 350px;
+    }
+    @include media(sm,max){
+        width: 300px;
+    }
+    background: #2c428d;
+    z-index: 10;
+    padding: 50px 60px;
+    overflow-y: auto;
+    transition: 0.4s;
+    @include transform(translateX(100%));
+    .nav-link {
+        color: $whiteColor;
+        &:hover {
+            opacity:0.8;
+        }
+    }
+    li {
+        &:last-child {
+            display:none;
+            @include media(lg,max){
+                display:block;
+            }
+        }
+        + li {
+            margin-top: 20px;
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include transition(all 0.4s ease-in-out);
+}
+.tgl-active {
+    .side-nav {
+        @include transform(translateX(0));
+    }
+    .backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+.tglCls {
+    width: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+@include media(lg,max){
+    .site-nav {
+        nav {
+            display:none;
+        }
+    }
+}

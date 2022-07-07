@@ -1,0 +1,42 @@
+.partner-section {
+    padding: 70px 0 80px;
+    @include media(lg,max){
+        padding:60px 0;
+    }
+    @include media(md,max){
+        padding-bottom: 40px;
+    }
+    .counter-wrap {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
+.partners-list {
+    margin-bottom: 80px;
+    @include media(lg,max){
+        @include justify-content(center);
+        margin-bottom: 50px;
+    }
+    @include media(md,max){
+        margin-bottom: 30px;
+    }
+    .partner-col {
+        width: 20%;
+        height: 200px;
+        @include centerAlign;
+        border: 1px solid #f0f1f6;
+        margin-left: -1px;
+        cursor: pointer;
+        @include transition(all 0.5s ease-in-out);
+        @include media(lg,max){
+            width: 33.33%;
+        }
+        @include media(md,max){
+            height: 150px;
+            padding: 20px;
+        }
+        @include media(xsm,max){
+            width: 50%;
+        }
+    }
+}

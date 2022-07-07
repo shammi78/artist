@@ -1,0 +1,71 @@
+@import'../utilities/variables';
+@import'../utilities/mixins';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    padding: 0 15px;
+    background: rgba(0,0,0,0.7);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include transition(all 0.35s ease-in-out);
+}
+.modal-videoWrapper {
+    max-width: 800px;
+    margin: -50px auto 0;
+    padding: 40px 0;
+    position: relative;
+    @include transition(all 0.35s ease-in-out);
+    .modal-cls {
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        right: -15px;
+        top: 25px;
+        z-index: 1;
+        background: #2d3bfe;
+        padding: 10px;
+        line-height: 10px;
+        @include rounded(50px);
+        cursor: pointer;
+    }
+    video {
+        width: 100%;
+    }
+}
+.responsive-video {
+    position: relative;
+    overflow: hidden;
+    &:before {
+        content: "";
+        display: block;
+        padding-top: 55%;
+    }
+    video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.active-modal {
+    .modal {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+    .modal-videoWrapper {
+        margin-top: 0;
+    }
+}

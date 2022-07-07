@@ -1,0 +1,149 @@
+/* Home Page Banner  */
+
+
+.hero{
+       background-image: url('../images/hero-banner-sm.png');
+    background-position: center;
+      background-repeat: no-repeat;
+        background-size: cover;
+               position: relative;
+                z-index: 0;
+    @include media(lg,max){
+        &:before{
+            background: rgba($ternaryColor,.3);
+              position: absolute;
+               content: '';
+               z-index: -1;
+                height: 100%;
+                 width: 100%;
+                  left: 0;
+                   top: 0;
+        }
+    }
+    @include media(lg,min){
+        background-image: url('../images/hero-banner.png');
+    }
+    &__caption{
+        min-height: 30rem;
+        @include align-items(center);
+        @include flex;
+        @include padding(3rem,1.5rem,3rem,1.5rem);
+        @include media(md,min){
+            min-height: 40rem;
+        }
+        @include media(xl,min){
+            min-height: 50rem;
+        }
+        @include media(xxl,min){
+            min-height: 60rem;
+        }
+        .btn{
+            margin-top: 2rem;
+            @include media(lg,min){
+                margin-top: 3.5rem;
+            }
+        }
+    }
+    .section__title{
+        text-transform: none;
+             font-size: 2.2rem;
+        @include media(sm,min){
+             font-size: 2.8rem;
+        }
+        @include media(lg,min){
+             font-size: 3.5rem;
+
+        }
+    }
+}
+
+/* How Works */
+.how__works{
+    @include padding(3rem,0,3rem,0);
+    @include media(lg,min){
+        @include padding(6rem,0,6rem,0);
+    }
+}
+
+
+/* Accordion */
+.accordion{
+    &__tab{
+        @include flex;
+        @include justify-content(center);
+        @include margin(1.5rem,0rem,2.3rem,0rem);
+        &--link{
+            text-transform: capitalize;
+                background: transparent;
+                   display: inline-flex;
+                    border: 0rem;
+            @include font(1.6rem,$greyColor,$primaryFont,500);
+            @include padding(.8rem, .8rem, .8rem, .8rem);
+            @include transition(linear .2s);
+            &.active,&:hover,&:focus,&:focus-visible{
+                color:$primaryColor;
+            }
+            @include media(lg,min){
+                @include font(1.8rem);
+            }
+        }
+    }
+    &__content{
+        display: none;
+        @include transition(linear .2s);
+        &.active{
+            @include flex;
+            @include flex-wrap(wrap);
+        }
+    }
+}
+
+.media__card{
+    @include inline-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    width: 100%;
+
+    li{
+        margin-bottom: 1.5rem;
+           background: $ternaryColor;
+                width: 100%;
+        @include padding(2.5rem,1rem,2.5rem,1rem);
+        @include media(xsm,min){
+            @include padding(3rem,1rem,3rem,1rem);
+            margin-bottom: .6rem;
+                    width: calc(100% / 2 - .3rem);
+        }
+        @include media(lg,min){
+            @include padding(4rem,1rem,4rem,1rem);
+            width: calc(100% / 4 - .3rem);
+        }
+    }
+
+    &--icon{
+        border-radius: 50%;
+           background: $whiteColor;
+               height: 8rem;
+                width: 8rem;
+        @include flex;
+        @include justify-content(center);
+        @include align-items(center);
+        @include margin(0,auto,2rem,auto);
+        @include media(lg,min){
+            @include margin(0,auto,3rem,auto);
+        }
+
+    }
+    &--text{
+        @include flex;
+        @include justify-content(center);
+    }
+    &--title{
+        text-transform: capitalize;
+            text-align: center;
+        @include font(1.6rem,$secondaryColor,$primaryFont,400);
+        @include media(lg,min){
+            @include font(1.8rem);
+        }
+    }
+}

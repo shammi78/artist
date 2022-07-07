@@ -1,0 +1,21 @@
+@charset 'utf-8';
+/* Base */
+@import 'base/reset'; 
+
+/* component  */
+@import 'component/common';
+@import 'component/accordian';
+@import 'component/counter';
+@import 'component/modal';
+
+/* Layout */
+@import 'layout/header';
+@import 'layout/banner';
+@import 'layout/approach';
+@import 'layout/testimonial';
+@import 'layout/technologies';
+@import 'layout/clientFocus';
+@import 'layout/ourPartner';
+@import 'layout/about';
+@import 'layout/footer';
+

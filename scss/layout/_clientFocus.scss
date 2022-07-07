@@ -1,0 +1,29 @@
+.client-content {
+    padding-right: 50px;
+    @include media(lg,max){
+        padding-right:15px;
+    }
+    .section-heading {
+        margin-bottom: 10px;
+    }
+}
+.clientVideo-wrap {
+    @include media(lg,max){
+        margin-top:30px;
+    }
+    text-align: right;
+    .video-main {
+        margin-top: 30px;
+        cursor: pointer;
+    }
+}
+
+@include media(lg,max){
+    .client-focus--section {
+        .col-6 {
+            flex-basis:100%;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
